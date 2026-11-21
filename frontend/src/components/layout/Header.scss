@@ -1,0 +1,103 @@
+// =========================================================
+// Header.scss
+// =========================================================
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $color-bg-card;
+  box-shadow: $shadow-sm;
+
+  &__inner {
+    @include container;
+  }
+
+  &__row {
+    @include flex-between;
+    height: 4rem;
+    gap: $spacing-4;
+  }
+
+  &__logo {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    flex-shrink: 0;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  &__search-form {
+    flex: 1;
+    max-width: 28rem;
+  }
+
+  &__search-wrap {
+    position: relative;
+  }
+
+  &__search-input {
+    @include form-control;
+    padding-left: $spacing-4;
+    padding-right: 2.5rem;
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  &__search-btn {
+    position: absolute;
+    right: $spacing-2;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-text-muted;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-4;
+    padding-bottom: $spacing-2;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__nav-link {
+    font-size: $font-size-sm;
+    color: $color-text-label;
+    white-space: nowrap;
+    text-transform: capitalize;
+    transition: color $transition-fast;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

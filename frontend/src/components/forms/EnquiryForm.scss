@@ -1,0 +1,70 @@
+// =========================================================
+// EnquiryForm.scss
+// =========================================================
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.enquiry-form {
+  background-color: $color-bg-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  padding: $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+
+  &__server-error {
+    background-color: $color-error-bg;
+    border: 1px solid $color-error-border;
+    border-radius: $radius-sm;
+    padding: $spacing-3;
+    color: $color-error;
+    font-size: $font-size-sm;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-label;
+  margin-bottom: $spacing-1;
+}
+
+.form-control {
+  @include form-control;
+
+  &--error {
+    border-color: $color-error-input;
+  }
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.form-error {
+  margin-top: $spacing-1;
+  font-size: $font-size-xs;
+  color: $color-error;
+}
+
+.btn {
+  @include btn-base;
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  font-size: $font-size-base;
+
+  &--primary {
+    background-color: $color-primary;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: $color-primary-dark;
+    }
+  }
+}

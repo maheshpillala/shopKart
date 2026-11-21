@@ -1,0 +1,96 @@
+// =========================================================
+// ProductCard.scss
+// =========================================================
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  &__image-wrap {
+    height: 12rem;
+    @include flex-center;
+    padding: $spacing-4;
+    background-color: $color-bg-image;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: $spacing-4;
+  }
+
+  &__title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-2;
+    flex: 1;
+    @include line-clamp(2);
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    margin-bottom: $spacing-2;
+  }
+
+  &__star {
+    width: 1rem;
+    height: 1rem;
+    color: $color-star-empty;
+
+    &--active {
+      color: $color-star-active;
+    }
+  }
+
+  &__rating-count {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    margin-left: $spacing-1;
+  }
+
+  &__footer {
+    @include flex-between;
+    margin-top: $spacing-2;
+  }
+
+  &__price {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__link {
+    @include btn-base;
+    background-color: $color-primary;
+    color: #fff;
+    font-size: $font-size-sm;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $radius-sm;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// =========================================================
+// HomePage.scss
+// =========================================================
+@use '../styles/variables' as *;
+
+.home-hero {
+  border-radius: $radius-xl;
+  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); // indigo-600 → indigo-800
+  color: #fff;
+  padding: $spacing-14 $spacing-8;
+  margin-bottom: $spacing-10;
+  text-align: center;
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-3;
+  }
+
+  &__subtitle {
+    color: rgba(#fff, 0.8); // approximates indigo-200
+    font-size: $font-size-lg;
+  }
+}
+
+.featured-section {
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-6;
+  }
+}
