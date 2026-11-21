@@ -1,0 +1,59 @@
+// =========================================================
+// EnquiryPage.scss
+// =========================================================
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.enquiry-page {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__back {
+    display: inline-block;
+    font-size: $font-size-sm;
+    color: $color-primary;
+    margin-bottom: $spacing-6;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-6;
+  }
+}
+
+.product-summary {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+  background-color: $color-bg-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-sm;
+  padding: $spacing-4;
+  margin-bottom: $spacing-8;
+
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    @include line-clamp(1);
+  }
+
+  &__price {
+    color: $color-primary;
+    font-weight: $font-weight-bold;
+  }
+}

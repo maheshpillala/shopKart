@@ -1,0 +1,15 @@
+// =========================================================
+// Badge.scss
+// =========================================================
+@use '../../styles/variables' as *;
+
+.badge {
+  display: inline-block;
+  background-color: $color-primary-light;
+  color: $color-primary-text;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  padding: 0.125rem $spacing-3;
+  border-radius: $radius-full;
+  text-transform: capitalize;
+}

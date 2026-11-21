@@ -1,0 +1,26 @@
+// =========================================================
+// Spinner.scss
+// =========================================================
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  @include flex-center;
+  padding-top: $spacing-16;
+  padding-bottom: $spacing-16;
+
+  &__ring {
+    width: 3rem;
+    height: 3rem;
+    border-radius: $radius-full;
+    border: 4px solid $color-primary-light;
+    border-top-color: $color-primary;
+    animation: spin 0.75s linear infinite;
+  }
+}
